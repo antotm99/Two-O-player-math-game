@@ -1,19 +1,17 @@
 class Question
 
-  attr_reader :num1, :num2, :answer
-
-  def initialize
+  def initialize 
     @num1 = (rand * 20).floor
     @num2 = (rand * 20).floor
     @answer = @num1 + @num2
   end
 
-  def get_question
-    "What does #{num1} plus #{num2} equal to?"
+  def output_question
+    "What does #{@num1} plus #{@num2} equal?"
   end
 
-  def is_correct(response)
-    response == answer
+  def is_correct?(player_guess)
+    player_guess == @answer
   end
 
 end
